@@ -1,0 +1,11 @@
+<ul class="route-list">
+	<% for item in @: %>
+		<li class="route-item" draggable="true" data-place-id="<%- item.placeId %>">
+			<% if item.title?: %>
+				<div class="name"><%- item.title %></div>
+			<% end %>
+			<div class="address"><%- item.vicinity %></div>
+			<div class="btn remove icon-trash" data-place-id="<%- item.placeId %>"></div>
+		</li>
+	<% end %>
+</ul>

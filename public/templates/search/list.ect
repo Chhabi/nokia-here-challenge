@@ -1,0 +1,15 @@
+<ul class="search-list">
+	<% for item, i in @: %>
+		<li class="search-item">
+			<% if item.title?: %>
+				<div class="name"><%- item.title %></div>
+			<% end %>
+			<div class="address"><%- item.vicinity %></div>
+			<% if item.inserted == true: %>
+				<div class="btn remove icon-minus" data-action="remove" data-place-id="<%- item.placeId %>" data-idx="<%- i %>"></div>
+			<% else: %>
+				<div class="btn add icon-add-to-list" data-action="add" data-place-id="<%- item.placeId %>" data-idx="<%- i %>"></div>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
