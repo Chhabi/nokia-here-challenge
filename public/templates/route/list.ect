@@ -2,6 +2,7 @@
 	<% if @items?: %>
 		<% for item, i in @items: %>
 			<li class="route-item" draggable="<%- 'true' if @items.length > 1 %>" data-place-id="<%- item.placeId %>" data-idx="<%- i %>">
+				<div class="thumb icon-menu"></div>
 				<% if item.title?: %>
 					<div class="name"><%- item.title %></div>
 				<% end %>

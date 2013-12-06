@@ -59,3 +59,9 @@
 .icon-trash:before {
 	content: "\e607";
 }
+.icon-menu:before {
+	content: "\e60c";
+}
+.icon-sort:before {
+	content: "\e60d";
+}
