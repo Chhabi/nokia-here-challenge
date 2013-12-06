@@ -12,6 +12,5 @@ requirejs([
 ) {
 
 	var app = new App();
-	app.run();
 
 });

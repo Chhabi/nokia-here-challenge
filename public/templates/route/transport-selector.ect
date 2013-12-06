@@ -1,0 +1,9 @@
+<ul class="sliding-panel route-transport-selector">
+	<% for btn in @btns: %>
+		<li
+			class="toolbar-btn <%- btn.iconClass %> <%- 'selected' if btn.selected %>"
+			data-action="<%- btn.action %>">
+				<%- btn.label %>
+		</li>
+	<% end %>
+</ul>

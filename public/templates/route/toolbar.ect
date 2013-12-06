@@ -1,0 +1,5 @@
+<ul class="route-toolbar">
+	<% for btn in @btns: %>
+		<li class="toolbar-btn <%- btn.iconClass %> <%- 'disabled' if btn.disabled %>" data-action="<%- btn.action %>"><%- btn.label %></li>
+	<% end %>
+</ul>

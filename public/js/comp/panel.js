@@ -1,5 +1,5 @@
 /*!
- * List 0.0.1
+ * Panel 0.0.1
  *
  * Copyright 2013, Federico Giovagnoli <mailto:gvg.fede@gmail.com>
  * Released under the MIT license
@@ -21,10 +21,13 @@ define([
 				this._root.innerHTML = x.renderContent(this._template, this._model, true);
 			}
 
-			this._root.addEventListener('click', this._onListClick.bind(this));
 		},
 
-		_onListClick: function(e) {}
-
+		show: function() {
+			this._root.classList.remove('hidden');
+		},
+		hide: function() {
+			this._root.classList.add('hidden');
+		}
 	});
 });

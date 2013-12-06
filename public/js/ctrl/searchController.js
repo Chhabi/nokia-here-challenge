@@ -51,6 +51,6 @@ define([
 		},
 		_onListItemRemove: function(item) {
 			this.emit('item:remove', this.list.model[item.idx]);
-		},
+		}
 	});
 });

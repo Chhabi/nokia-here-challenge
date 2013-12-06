@@ -751,7 +751,7 @@ for(s=[],e=0,n=o.length;n>e;e++)r=o[e],i=r.type,__indexOf.call(t,i)>=0&&s.push(r
  * Released under the MIT license
  */
  (function () {
-     
+
      var fs;
      var path;
      var CoffeeScript;
@@ -1478,7 +1478,7 @@ define('core/utils',[
 		r.open(method, url);
 		r.onload = function() {
 			if (this.status === 200) {
-				p.complete(JSON.parse(this.response));
+				p.complete(JSON.parse(this.response || this.responseText));
 			} else {
 				p.reject();
 			}
@@ -1496,8 +1496,9 @@ define('core/utils',[
 	};
 
 	var deviceInfo = {
-		isChromeMobile: (UA.indexOf('Android') > -1 && UA.indexOf('Chrome')),
-		isIOS: (UA.indexOf('iPhone') > -1 || UA.indexOf('iPad')),
+        isIE: (UA.indexOf('MSIE') > -1),
+		isChromeMobile: (UA.indexOf('Android') > -1 && UA.indexOf('Chrome') > -1),
+		isIOS: (UA.indexOf('iPhone') > -1 || UA.indexOf('iPad') > -1),
 		isMobile: (UA.indexOf('Android') > -1
 			|| UA.indexOf('iPhone') > -1
 			|| UA.indexOf('iPad') > -1)
@@ -1509,14 +1510,14 @@ define('core/utils',[
 				domPot = document.createElement('div'),
 				firstChild = null;
 			return function(template, data, forceString) {
-				if (forceString) {
-					return render(template, data);
-				}
-				domPot.innerHTML = render(template, data);
-				firstChild = domPot.firstChild;
-				while(firstChild != null && firstChild.nodeType == 3){
-					firstChild = firstChild.nextSibling;
-				}
+                if (forceString) {
+                    return render(template, data);
+                }
+                domPot.innerHTML = render(template, data);
+                firstChild = domPot.firstChild;
+                while(firstChild != null && firstChild.nodeType == 3){
+                    firstChild = firstChild.nextSibling;
+                }
 				return firstChild;
 			}
 		})(),
@@ -1633,7 +1634,7 @@ define('core/utils',[
 
 (function () {
 	// Place the script in strict mode
-	
+
 
 	/**
 	 * Class for managing events.

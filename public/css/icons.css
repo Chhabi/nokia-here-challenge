@@ -35,6 +35,18 @@
 .icon-location2:before {
 	content: "\e603";
 }
+.icon-automobile:before {
+	content: "\e608";
+}
+.icon-bus:before {
+	content: "\e609";
+}
+.icon-uniF56D:before {
+	content: "\e60a";
+}
+.icon-share:before {
+	content: "\e60b";
+}
 .icon-cross:before {
 	content: "\e604";
 }

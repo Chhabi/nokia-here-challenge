@@ -1,11 +1,16 @@
 <ul class="route-list">
-	<% for item in @: %>
-		<li class="route-item" draggable="true" data-place-id="<%- item.placeId %>">
-			<% if item.title?: %>
-				<div class="name"><%- item.title %></div>
-			<% end %>
-			<div class="address"><%- item.vicinity %></div>
-			<div class="btn remove icon-trash" data-place-id="<%- item.placeId %>"></div>
-		</li>
+	<% if @items?: %>
+		<% for item, i in @items: %>
+			<li class="route-item" draggable="<%- 'true' if @items.length > 1 %>" data-place-id="<%- item.placeId %>" data-idx="<%- i %>">
+				<% if item.title?: %>
+					<div class="name"><%- item.title %></div>
+				<% end %>
+				<div class="address"><%- item.vicinity %></div>
+				<div class="btn remove icon-trash" data-place-id="<%- item.placeId %>"></div>
+			</li>
+		<% end %>
+		<% if @items.length == 1: %>
+			<li class="route-item hint">Add another place to create an itinerary</li>
+		<% end %>
 	<% end %>
 </ul>

@@ -21,6 +21,9 @@ define([
 			this._template = o.template;
 			this._model = o.model || [];
 			this._root = x.render(this._template, this._model);
+			if (x.device.isIE) {
+				this._root.innerHTML = x.renderContent(this._template, this._model, true);
+			}
 
 			this._searchDelay = null;
 
